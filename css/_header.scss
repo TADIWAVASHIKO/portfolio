@@ -1,0 +1,121 @@
+$color-text:  #ffffff;
+$color-menu:  #fcfcfc;
+$variable-menu-animation-time:        1s;
+$variable-burger-animation-time:      .35s;
+$variable-menu-animation-function:    cubic-bezier(.25, .1, .25, 1);
+$variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
+
+    
+    
+    
+    header{
+        height: 10vh;display: flex;justify-content: space-between;align-items: center;
+        width: 100%;
+        .logo{
+            width: auto;height: 190px;
+            img{
+                width: 100%;height: 100%;
+            }
+        }
+        ul{
+            li{
+                padding-right: 35px;
+                a{
+                    color: rgb(255, 255, 255);font-size: 30px;text-transform: capitalize;text-decoration: none;font-family: 'semi';transition:  .5s ease-in;transition: 0.5s;
+                    &:hover{
+                        color:  $color-text;text-decoration: underline;text-decoration-color: white;
+                    }
+                }
+             
+            }
+           
+        }
+    }
+
+
+
+
+
+
+ #menu--toggle[type="checkbox"]:not(:checked),
+ #menu--toggle[type="checkbox"]:checked {
+   display: none;
+ }
+ 
+ .menu--toggle__trigger,
+ .menu--toggle__burger,
+ .menu--toggle__burger:before,
+ .menu--toggle__burger:after {
+   position: absolute; top: 1.6em; right: 1.6em;width: 2em; height: 5px; background-color: $color-text; border-radius: 2px;
+   cursor: pointer;  z-index: 100; transition: $variable-burger-animation-time $variable-menu-animation-function;
+ }
+ 
+ .menu--toggle__trigger {
+   height: 2em; background: none;
+ }
+ 
+ .menu--toggle__burger {
+  
+   &:before {
+     content: ""; top: 10px;left: 0;
+   }
+   &:after {
+     content: ""; top: 20px;left: 0;
+   }
+ }
+ 
+ .menu__body {
+   position: absolute;top: 0; right: 0;width: 7em;height: 7em;margin: 0;padding: 0;background-image: linear-gradient( 45deg,#322ad1,#0E0C38 );
+   border-bottom-left-radius: 100%; box-shadow: 3px 3px 7px rgba($color-text, .2); z-index: 10;padding-top: 70PX;
+   li{
+       @include center;padding: 20px;
+   }
+   button{
+    @include btn;margin: 0 auto;background-color: #0E0C38;padding: 5px 0 5px 0;
+ }
+ }
+ 
+
+ .menu__body-link {
+   display: none;color: #fff;text-decoration: none;text-transform: capitalize; list-style: none; outline: 0;;
+ }
+ 
+
+
+ 
+ #menu--toggle:checked + .menu--toggle__trigger {
+   
+   & + .menu--toggle__burger {
+   
+     top: 35px; transform: rotate(405deg); 
+   
+     &:before {
+       top: 0; transform: rotate(-90deg); 
+     }
+     &:after {
+       top: 0; transform: rotate(90deg);
+     }
+   }
+   
+   & + .menu--toggle__burger + .menu__body {
+     animation: checkboxCheckedAnimation $variable-menu-animation-time $variable-menu-animation-function both;
+   }
+   
+   & ~ .menu__body .menu__body-link {
+     display: block;
+   }
+ }
+ 
+
+ 
+ @keyframes checkboxCheckedAnimation {
+   50% {
+     width: 100vw;height: 100vh;
+   }
+   100% {
+     width: 100vw;height: 100vh;border-radius: 0;
+   }
+ }
+ 
+
+   

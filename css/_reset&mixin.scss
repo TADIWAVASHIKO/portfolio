@@ -1,0 +1,102 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.4;
+	background-color: #040221;
+	color: #fff;
+	overflow-x: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.section{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+*{
+	h2{font-size: 50px;}
+}
+// mixins
+
+@mixin center {
+	display: flex;justify-content: center;align-items: center;
+}
+
+@mixin btn {
+	width: 150px;font-size: 25px;text-transform: uppercase;border-radius: 40px 0 40px 0px;font-family: 'bold';
+	outline: none;border: none;color: #ffffff;background-color: #322ad1;;
+	&:hover{
+		background-color: #0E0C38;color: #fff;border: 2px solid #fff;outline: none;box-shadow: 2px 4px 5px #fff;
+	}
+}
+
+@mixin h2 {
+		font-family: 'semi';font-size: 50px;margin-bottom: 30px;	
+		height: 70px; 
+		&::first-letter {
+			color: #322ad1;font-size: 90px;
+		}
+	 
+}
+
+// fonts
+ 
+@font-face {
+	font-family: 'bold';
+	src: url(/fonts/Akrobat-ExtraBold.ttf);
+  }
+
+  @font-face {
+	font-family: 'light';
+	src: url(/fonts/Akrobat-ExtraLight.ttf);
+  }
+
+  @font-face {
+	font-family: 'semi';
+	src: url(/fonts/Akrobat-SemiBold.ttf);
+  }
+
+
